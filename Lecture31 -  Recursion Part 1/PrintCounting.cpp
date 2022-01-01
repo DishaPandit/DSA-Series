@@ -21,5 +21,5 @@ int main()
     cout <<"Enter a number "<<endl;
     cin >> n;
     print(n);
-    return 0;
+    return 0;  
 }
