@@ -1,0 +1,81 @@
+It was told that below practice is bas.
+
+int n;
+cin>>n;
+int arr[n];
+
+Why? --> Becoz you should know this variable size before compilation, but
+here we are getting to know its value at the runtime.
+This can create problem
+
+How? --->
+Everytime a program is executed we get two types of memory for that program
+
+1. Stack  - lets say 10 bytes
+2. Heap - lets say 100 bytes. Heap memory is bigger than Stack
+
+(using stack memory) -- STATIC ALLOCATION
+---------------------
+Now so if you gave the size of array at runtime, the compiler does not know
+how much memory will be needed to create array. So lets say it allocates 
+20 bytes for Stack
+Now if at runtime, you make a array bigger than this size, then program will 
+not have that much memory to create the array, hence it will crash
+So, to avoid that situtaion, avoid this practice
+
+If you still want to create array such that you can provide size at run time, you can do so by utilising heap memory
+
+(using heap memory) -- DYNAMIC ALLOCATION
+-------------------
+To use heap memory we have to use "new" keyword.
+
+new char;
+
+The above line will create a memory of char size in heap memory
+Here, you can give name to varibale. It only returns value in form of address
+Hence if you want to access that value, you will have to use pointer
+
+So,
+
+char *ch = new char;
+
+Above line created a char memory in heap and pointed it using pointer so that we can get its value. Here this char variable wil be created in heap and char pointer will be created in stack
+
+--------------------------------------------------------------------
+Freeing up of memory kyuki ye java nhi hai bhaiya..idhr memory ko free karana padta hai
+
+Case 1 - Static allocation 
+
+while(true)
+{
+    int n = 2;
+}
+
+Here the loop keeps on running. Every time it enters the loop, create a
+int of 4 bytes in stack, and when it comes out of block, it deletes it automatically
+and repeats the process. So at any instance of time, only 4 bytes in alloacted 
+in the stack memory
+
+Case 2 - Dynamic allocation
+
+while(true)
+{
+    int *ptr = new int;
+}
+
+Here everytime, it enters the loop, a ptr of 8 bytes is created in stack
+and int type memory of 4 bytes in created in heap. When it comes out of block,
+the memory in stack gets freed but heap memory stays there.
+And over a period of time,it gets piled up by 4 bytes everytime, and eventually
+program will crash when it runs out of memory. So we have to free up heap memory
+when it is not in use. 
+
+For deleting there is "delete" keyword
+
+int *i = new int;
+delete i;
+
+int *arr = new int[5];
+delete []arr;
+
+

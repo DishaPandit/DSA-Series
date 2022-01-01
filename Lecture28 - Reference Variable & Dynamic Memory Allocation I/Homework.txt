@@ -1,0 +1,4 @@
+address typecasting
+void pointer
+mcq pointers 
+mcq memory alloaction 

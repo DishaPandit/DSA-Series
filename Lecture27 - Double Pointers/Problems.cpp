@@ -9,7 +9,7 @@ int main()
     int *ptr = &second;
     *ptr = 9;
     cout  << first << " " << second << endl;   
-    */ 
+*/ 
 
 /*
     int first = 6;
@@ -101,7 +101,7 @@ int main()
 */
 
 /*
-     char ch = 'a';
+    char ch = 'a';
     char* ptr = &ch;
     ch++;
     cout << *ptr << endl;

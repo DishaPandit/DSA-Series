@@ -3,6 +3,8 @@ https://leetcode.com/problems/search-a-2d-matrix-ii/
 
 here we are not using concept of mid. it was not applicable coz not sorted
 so tried to reduce our search space
+
+Time Complexity - O(m+n)
 */
 
 #include<iostream>
