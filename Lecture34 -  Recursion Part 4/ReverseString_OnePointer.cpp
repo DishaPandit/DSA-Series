@@ -1,10 +1,7 @@
 /*
-
-i/p : abcde
-o/p : edcba
-
+    i/p : abcde
+    o/p : edcba
 */
-
 #include<iostream>
 #include<string.h>
 using namespace std;
@@ -31,7 +28,7 @@ int main()
     int s=0;
     reverseString(str,s);
     cout<<"Reversed string : "<<endl;
-    cout<<str;
+    cout<<str<<endl;
     return 0;
 };
 

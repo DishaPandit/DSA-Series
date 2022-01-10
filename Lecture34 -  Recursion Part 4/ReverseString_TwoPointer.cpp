@@ -32,7 +32,7 @@ int main()
     int e=str.length()-1;
     reverseString(str,s,e);
     cout<<"Reversed string : "<<endl;
-    cout<<str;
+    cout<<str<<endl;
     return 0;
 };
 
