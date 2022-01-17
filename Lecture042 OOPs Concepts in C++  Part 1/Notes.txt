@@ -1,0 +1,25 @@
+--> Access modifiers are of three types in c++ - public, private and protected
+--> By default, it is private.
+--> private data members can be accessed only inside the same class where it is defined
+--> public data members can be accessed inside and outside the class where it is defined
+--> To access private data members, we can use getter and setter
+
+--> Why should the copy constructor accept its 
+    parameter by reference in C++?
+
+    Because if it's not by reference, it's by value. 
+    To do that you make a copy, and to do that you call 
+    the copy constructor. But to do that, we need to make a 
+    new value, so we call the copy constructor, and so on...
+
+    (You would have infinite recursion because 
+    "to make a copy, you need to make a copy".)
+
+    ----------------------------------------------------------------
+
+    HOMEWORK
+
+    1. const keyword
+
+
+    2. Initialisation list
