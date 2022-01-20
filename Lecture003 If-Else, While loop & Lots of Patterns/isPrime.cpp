@@ -12,18 +12,19 @@ int main()
 if(n==2)
     cout<<"Prime"<<endl;
  int i = 2;
+ bool isPrime = 1;
  while(i<n)
  {
      if(n%i==0)
      {
-        cout<<"Not prime"<<endl;
+        isPrime = 0;
         break;
      }
-     else
-     {
-        cout<<"Prime"<<endl;
-        break;
-     }
+     
     i++;
  }
+ if(isPrime)
+   cout<<"Prime"<<endl;
+else
+   cout<<"Not prime"<<endl;
 }
