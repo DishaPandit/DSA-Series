@@ -1,0 +1,36 @@
+To reverse a number -
+
+ans = digit*(10^i)+ans;
+
+ex.  1,2,3
+    ans = 0 at start
+
+    ans = 1*10^0 + 0 = 1
+
+    ans = 2*10^1 + 1 = 21
+
+    ans = 3*10^2 + 21 = 321
+
+
+To get number in original order
+
+ans = ans*10 + digit
+
+ex. 1,2,3
+    ans = 0 at start
+
+    ans = 0*10 + 1 = 1
+
+    ans = 1*10 + 2 = 12
+
+    ans = 12*10 + 3 = 123
+
+-------------------------------------------------------------------
+
+If you want to work with digit 
+n = n % 10;
+n = n / 10;
+
+If you want to work with bits
+n = n & 1;
+n = n >> 1;
