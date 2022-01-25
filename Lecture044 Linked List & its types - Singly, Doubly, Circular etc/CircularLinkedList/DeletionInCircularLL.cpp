@@ -13,6 +13,18 @@ class Node{
         this->data = d;
         this->next = NULL;
     }
+
+    //destructor
+    ~Node()
+    {
+        int value = this->data;
+        if(this->next != NULL)
+        {
+            delete next;
+            next = NULL;
+        }
+        cout << "Memory is free for node with data : "<<value <<endl;
+    }
 };
 
 void insertNode(Node* &tail,int element, int d)
@@ -20,11 +32,10 @@ void insertNode(Node* &tail,int element, int d)
     //empty list
     if(tail == NULL)
     {
-        Node *temp = new Node(d);
-        tail = temp;
+        Node* newNode = new Node(d);
+        tail = newNode;
         //making it circular
-        temp->next = temp;
-        return;
+        newNode->next = newNode;
     }
     else{
         //non empty list
@@ -68,6 +79,47 @@ void print(Node* tail)
     cout << endl;
 }
 
+void deleteNode(Node* &tail, int element)
+{
+    //empty list
+    if(tail == NULL)
+    {
+        cout << "List is already empty"<<endl;
+        return;
+    }
+    else
+    {
+        //non-empty list
+        //assuming the element is already present
+
+        Node* prev = tail;
+        Node* curr = prev->next;
+
+        while(curr->data != element)
+        {
+            prev = curr;
+            curr = curr->next;
+        }
+
+        prev->next = curr->next;
+
+        //single node linked list
+        if(curr == prev)
+        {
+            tail = NULL;
+        }
+
+        // >= 2 Nodes linked list
+        else if(tail == curr)
+        {
+            tail = prev;
+        }
+        curr->next = NULL;
+        delete curr;
+
+    }
+}
+
 int main() {
 
     Node* tail = NULL;
@@ -89,8 +141,12 @@ int main() {
     
     insertNode(tail, 9, 10);
     print(tail);
-
+    
     insertNode(tail, 3, 4);
+    print(tail);
+
+    //deletion
+    deleteNode(tail,3);
     print(tail);
     
 
