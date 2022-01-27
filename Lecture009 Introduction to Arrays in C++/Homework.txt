@@ -1,0 +1,22 @@
+1. How to initialize entire array with zero?
+
+Ans -  int arr[10] = {0};
+
+2. How to initialize entire array with a non-zero value?
+
+Ans - 
+Method 1 - 
+
+int arr[10] = {[0...9] = 4};
+
+Here, 0 is first index, 9 is last index, 
+and 4 is the value with which we want to initialize
+
+Method 2 -
+
+for(int i =0; i<size ; i++)
+{
+    arr[i] =  value;
+}
+
+3. int arr[5]  = {2,4};         //will initialize 0th and 1st index with 2 and 4. Rest all will be zero
