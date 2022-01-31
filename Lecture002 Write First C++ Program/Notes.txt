@@ -149,7 +149,7 @@ Problem -
 
 Advantage - 
 1. Zero has only 1 representation.
-2. Range has increased from [-2^n -1, 2^n-1] to [2^n,2^n-1]
+2. Range has increased from [-2^n -1, 2^n-1] to [-2^n,2^n-1]
 
 
 
