@@ -1,0 +1,26 @@
+Binary search works on monotonic function ie either increasing or decreasing
+Algo -
+1. Find mid element compare it with key. If found , return index.
+2. If key < mid, search in left half
+3. else serach in right half
+4. repeat till s<=e
+
+---------------------------------------------
+Calculate time complexity of binary search.
+
+1st iteration = n elements
+2nd iteration = n/2 elements
+3rd iteration = n/4 elements
+4th iteration = n/8 elements
+.
+.
+.
+.
+.
+nth iteration = n/2^k elements which is equal to 1
+
+=> n/2^k = 1
+=> n = 2^k
+=> k = log n 
+
+Hence time complexity of binary search is O(log n)
