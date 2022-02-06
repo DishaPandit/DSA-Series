@@ -38,12 +38,23 @@ void print(Node* &head)
     cout <<endl;
 }
 
-void insertAtTail(Node* &tail, int d)
+void insertAtTail(Node* &head,Node* &tail, int d)
 {
+    if(tail == NULL)
+    {
+        Node* temp  = new Node(d);
+        tail = temp;
+        head = temp;
+    }
+
     //create a new node which you will insert
-    Node* temp  = new Node(d);
-    tail->next = temp;
-    tail = temp;
+    else
+    {
+        Node* temp  = new Node(d);
+        tail->next = temp;
+        tail = temp;
+    }
+    
 }
 
 void insertAtPosition(Node* &head,Node* &tail, int position, int d)
@@ -67,7 +78,7 @@ void insertAtPosition(Node* &head,Node* &tail, int position, int d)
     //insert at end
     if(temp->next == NULL)
     {
-        insertAtTail(tail,d);
+        insertAtTail(head,tail,d);
         return;
     }
 
@@ -80,8 +91,8 @@ void insertAtPosition(Node* &head,Node* &tail, int position, int d)
 int main()
 {
     Node* node1 = new Node(20);
-    Node* head = node1;
-    Node* tail = node1;
+    Node* head = NULL;
+    Node* tail = NULL;
 
     //printing before insertion
     cout << "Printing before insertion : "<<endl;
@@ -89,15 +100,15 @@ int main()
 
     //printing after insertion
     cout << "Printing after 1st insertion : "<<endl;
-    insertAtTail(tail,30);
+    insertAtTail(head,tail,30);
     print(head);
     cout << "Printing after 2nd insertion : "<<endl;
-    insertAtTail(tail,50);
+    insertAtTail(head,tail,50);
     print(head);
 
     //printing in given position
     cout << "Insert at nth position : "<<endl;
-    insertAtPosition(head,tail,4,100);
+    insertAtPosition(head,tail,3,100);
     print(head); 
 
     //verifying position of head and tail

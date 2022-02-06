@@ -119,8 +119,8 @@ void insertAtPosition(Node* &head, Node* &tail, int position, int d)
 int main()
 {
     Node* node1 = new Node(10);
-    Node* head = node1;
-    Node* tail = node1;
+    Node* head = NULL;
+    Node* tail = NULL;
     print(head);
     int len = getLength(head);
     cout << "Length of linked list : "<<len <<endl;

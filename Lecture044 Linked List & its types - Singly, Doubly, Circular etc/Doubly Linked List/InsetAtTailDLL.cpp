@@ -42,31 +42,36 @@ int getLength(Node* head)
     return len;
 }
 
-void insertAtTail(Node* &tail, int d)
+void insertAtTail(Node* &head,Node* &tail, int d)
 {
     //if the linked list is empty
     if(tail==NULL)
     {
         Node* temp = new Node(d);
         tail = temp;
+        head = temp;
     }
-    Node* temp = new Node(d);
-    tail->next = temp;
-    temp->prev = tail;
-    tail = temp;
+    else
+    {
+        Node* temp = new Node(d);
+        tail->next = temp;
+        temp->prev = tail;
+        tail = temp;
+    }
+    
 }
 
 int main()
 {
     Node* node1 = new Node(10);
-    Node* head = node1;
-    Node* tail = node1;
+    Node* head = NULL;
+    Node* tail = NULL;
     print(head);
     int len = getLength(head);
     cout << "Length of linked list : "<<len <<endl;
 
     //insertion
-    insertAtTail(tail,20);
+    insertAtTail(head,tail,20);
 
     //printing after insertion
     cout <<"Printing after first insertion : "<<endl;
@@ -75,7 +80,7 @@ int main()
     cout << "Head is at : "<<head->data <<endl;
     cout << "Tail is at : "<<tail->data <<endl;
 
-    insertAtTail(tail,30);
+    insertAtTail(head,tail,30);
 
     //printing after insertion
     cout <<"Printing after second insertion : "<<endl;
@@ -83,7 +88,7 @@ int main()
     cout << "Head is at : "<<head->data <<endl;
     cout << "Tail is at : "<<tail->data <<endl;
 
-    insertAtTail(tail,40);
+    insertAtTail(head,tail,40);
 
     //printing after insertion
     cout <<"Printing after third insertion : "<<endl;

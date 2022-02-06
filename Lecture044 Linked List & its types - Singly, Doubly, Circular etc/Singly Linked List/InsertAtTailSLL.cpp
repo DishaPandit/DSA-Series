@@ -14,12 +14,21 @@ class Node{
     }
 };
 
-void insertAtTail(Node* &tail, int d)
+void insertAtTail(Node* &head,Node* &tail, int d)
 {
+    if(tail==NULL)
+    {
+        Node* temp = new Node(d);
+        tail = temp;
+        head = temp;
+    }
     //create a new node which you will insert
-    Node* temp  = new Node(d);
-    tail->next = temp;
-    tail = temp;
+    else
+    {
+        Node* temp  = new Node(d);
+        tail->next = temp;
+        tail = temp;
+    }
 }
 void print(Node* &head)
 {
@@ -34,9 +43,9 @@ void print(Node* &head)
 
 int main()
 {
-    Node* node1 = new Node(20);
-    Node* head = node1;
-    Node* tail = node1;
+    //Node* node1 = new Node(20);
+    Node* head = NULL;
+    Node* tail = NULL;
 
     //printing before insertion
     cout << "Printing before insertion : "<<endl;
@@ -44,9 +53,9 @@ int main()
 
     //printing after insertion
     cout << "Printing after 1st insertion : "<<endl;
-    insertAtTail(tail,30);
+    insertAtTail(head,tail,30);
     print(head);
     cout << "Printing after 2nd insertion : "<<endl;
-    insertAtTail(tail,50);
+    insertAtTail(head,tail,50);
     print(head);
 }
