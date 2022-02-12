@@ -17,8 +17,9 @@ class Stack
             top = -1;
         }
 
-        void push(int element)      //TC - O(n)
+        void push(int element)      //TC - O(1)
         {
+            //ek bhi element ki jagah ho to push krdo
             if(size - top > 1)
             {
                 top++;
@@ -30,7 +31,7 @@ class Stack
             }
         }
 
-        void pop()        //TC - O(n)
+        void pop()        //TC - O(1)
         {
             if(top >= 0)
                 top--;
@@ -39,7 +40,7 @@ class Stack
                 cout<<"Stack underflow"<<endl;
         }
 
-        int peak()      //TC - O(n)
+        int peak()      //TC - O(1)
         {
             if(top >= 0)
                 return arr[top];
@@ -51,7 +52,7 @@ class Stack
             }
         }
 
-        bool isEmpty()      //TC - O(n)
+        bool isEmpty()      //TC - O(1)
         {
             if(top == -1)
                 return true;
