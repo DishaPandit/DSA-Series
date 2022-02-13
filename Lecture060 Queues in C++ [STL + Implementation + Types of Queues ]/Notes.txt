@@ -1,0 +1,10 @@
+1. Input restricted queue - queue in which push operation is allowed on rear end
+but pop operation is allowed on both front and rear end
+Hence, functions will be push_back(), pop_front(), pop_back()
+
+2. Output restricted queue - queue in which pop operation is allowed on front end
+but push operation is allowed on both front and rear end
+Hence, functions will be pop_front(), push_front(), push_back()
+
+3. Doubly ended queue - queue in which we can push and pop from both ends
+Hence, functions will be push_back(), push_front(), pop_back(), pop_front()
