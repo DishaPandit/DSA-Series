@@ -52,7 +52,9 @@ public:
             arr[Front] = -1;
             Front ++;
             
-            //if queue becomes empty
+            //pusp pop krte hue agar front aur rear end me chle gye tb ek push operation aaegi to 
+            //koi jagah shuru ki waste na ho isliye hm front aur rear ko wapas se zero kr denge
+            
             if(Front == rear)
             {
                 Front = 0;
