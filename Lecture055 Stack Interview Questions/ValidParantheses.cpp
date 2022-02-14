@@ -1,5 +1,8 @@
 //https://www.codingninjas.com/codestudio/problems/valid-parenthesis_795104?
 
+//We used stack becoz on observing the problem we found that the bracket which opened latest, closed early
+//following the LIFO rule, hence use stack
+
 //Important
 //TC - O(n)
 //SC - O(n)
