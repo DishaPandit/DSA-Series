@@ -38,7 +38,7 @@ public:
 //Solution 2
 //TC - O(n)
 //SC - O(1
-
+//https://leetcode.com/problems/find-all-duplicates-in-an-array/discuss/775798/c%2B%2B-Four-Solution-or-O-(N*N)-to-greater-O(N)-or-Explain-All
 /*
 
 class Solution {
@@ -51,6 +51,27 @@ public:
                 ans.push_back(abs(nums[i]));
             nums[abs(nums[i])-1]=-nums[abs(nums[i])-1];
         }
+        return ans;
+    }
+};
+
+*/
+
+
+//Solution 3 
+//TC - O(n)
+//SC - O(n)
+
+/*
+
+class Solution {
+public:
+    vector<int> findDuplicates(vector<int>& nums) {
+        if(nums.empty())return {};
+        vector<int>ans;
+        unordered_map<int,int>mp;
+        for(int no:nums)mp[no]++;
+        for(auto it:mp)if(it.second==2)ans.push_back(it.first);
         return ans;
     }
 };

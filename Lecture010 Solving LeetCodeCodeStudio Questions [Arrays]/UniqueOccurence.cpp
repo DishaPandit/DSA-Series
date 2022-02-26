@@ -107,3 +107,40 @@ bool uniqueOccurrences(vector<int>& arr) {
         return true;
     }
 */
+
+//Approach 4 : 
+//TC - O(n)
+
+/*
+
+class Solution {
+public:
+    bool uniqueOccurrences(vector<int>& arr) {
+        
+        //map me har element k liye uski freqeuency store krlo
+        map<int,int> mp;
+        
+        //set me frequency store hogi
+        
+        //set ki property hoti hai ki usme sirf unique element hi jaate hai
+        //to agar frequency unique hui to set aur map ka size equal hoga else unequal hoga
+        set<int> st;
+        
+        for(int i = 0; i<arr.size(); i++)
+        {
+            //map me har element ki corresponding frequency store ho rhi hai
+            mp[arr[i]]++;
+        }
+        
+        for(auto i : mp)
+        {
+            //set me frequency daal rhe..aur frequency second part me pdi hai map k isilye i.second use kiya
+            st.insert(i.second);
+        }
+        
+        //size compare krlo map aur set ka
+        return st.size()==mp.size() ? true : false;
+    }
+};
+
+*/
