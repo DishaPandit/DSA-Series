@@ -42,6 +42,26 @@ Node* insertInBST(Node* root, int data)
         
 }
 
+int minValue(Node* root)
+{
+    Node* temp = root;
+    while(temp->left != NULL)
+    {
+        temp = temp->left;
+    }
+    return temp->data;
+}
+
+int maxValue(Node* root)
+{
+    Node* temp = root;
+    while(temp->right != NULL)
+    {
+        temp = temp->right;
+    }
+    return temp->data;
+}
+
 void levelOrderTraversal(Node* root)
 {
     queue<Node*> q;
@@ -97,6 +117,9 @@ int main()
     takeInput(root);
     cout <<"Printing BST : "<<endl;
     levelOrderTraversal(root);
+
+    cout <<"Minimum value in BST : "<<minValue(root)<<endl;
+    cout <<"Maximum value in BST : "<<maxValue(root)<<endl;
     return 0;
 
 }
