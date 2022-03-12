@@ -1,0 +1,14 @@
+Complete binary tree - 1. A binary tree whose all levels are fully filled except the last level
+                       2. Node is always added from the left
+
+Full binary tree - A full binary tree can be defined as a binary tree in which all the nodes have 0 or two children
+
+Heap order property - 
+
+Heap is a complete binary tree that comes with a heap order property
+
+Below are the heap order property -
+
+1. Max heap - values in parent nodes are greater than or equal to child node. It is complete binary tree
+
+2. Min heap - values in parent nodes are smaller than or equal to child node. It is complete binary tree
